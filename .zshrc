@@ -36,9 +36,9 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # ssh auto
-function _ssh {
-  compadd `fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort`;
-}
+#function _ssh {
+#  compadd `fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort`;
+#}
 setopt correct
 
 ##################################################
