@@ -44,11 +44,10 @@ setopt correct
 ##################################################
 # PROMPT
 ##################################################
-#PROMPT='%k%f%{[38;5;219m%}Host: %m  %{[38;5;085m%}PWD: %~
-#%{[38;5;010m%}[%D{%H:%M:%S} %h] %n:%F{006}%~%f%# '
-PROMPT='%k%f%{[30;48;5;198m%} Host: %m %{[0m%} %{[30;48;5;109m%} Hist: %h %{[0m%} %{[30;48;5;072m%} PWD: %~ %{[0m%} %{[30;48;5;227m%} Return: %(?.True.False) 
-%{[0m%}%{[38;5;010m%}%n%f%# '
-RPROMPT='%D{%H:%M:%S}'
+PROMPT='%k%f%{[38;5;010m%}[%D{%H:%M:%S} %h] %n:%F{006}%~%f%# '
+#PROMPT='%k%f%{[30;48;5;198m%} Host: %m %{[0m%} %{[30;48;5;109m%} Hist: %h %{[0m%} %{[30;48;5;072m%} PWD: %~ %{[0m%} %{[30;48;5;227m%} Return: %(?.True.False) 
+#%{[0m%}%{[38;5;010m%}%n%f%# '
+#RPROMPT='%D{%H:%M:%S}'
 
 ##################################################
 # ALIAS
@@ -80,4 +79,25 @@ setopt pushd_ignore_dups
 # LETTER DELETE
 ##################################################
 WORDCHARS=':?_-.[]~=&;!#$%^(){}<>'
+
+
+##################################################
+# POWERLINE
+##################################################
+function powerline_precmd() {
+  PS1="$(powerline-shell --shell zsh $?)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+  install_powerline_precmd
+fi
 
