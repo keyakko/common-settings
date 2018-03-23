@@ -16,6 +16,17 @@ map sl <C-w>l
 "##########################
 " Plugin Manager
 "##########################
+
+"install
+if has('vim_starting')
+				set nocompatible
+				if !isdirectory(expand("~/.vim/plugged/vim-plug"))
+								echo "install plug..."
+								:call system("mkdir -p ~/.vim/plugged/vim-plug")
+								:call system("git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload")
+				endif
+				set runtimepath+=~/.vim/plugged/vim-plug
+endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Shougo/denite.nvim'
