@@ -12,7 +12,8 @@ sudo apt install -y \
 	wget \
 	tasksel \
 	openssh-server \
-	vim
+	vim \
+	python-pip
 
 
 #git clone https://github.com/keyakko/common-settings ~/git/common-settings
