@@ -26,5 +26,5 @@ chsh -s /bin/zsh
 pip install --user git+git://github.com/powerline/powerline
 pip install psutil
 git clone https://github.com/powerline/fonts ~/git/powerline-fonts
-~powerline-fonts/install.sh
+~/git/powerline-fonts/install.sh
 
