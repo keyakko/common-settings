@@ -13,7 +13,8 @@ sudo apt install -y \
 	tasksel \
 	openssh-server \
 	vim \
-	python-pip
+	python-pip \
+	network-manager 
 
 
 #git clone https://github.com/keyakko/common-settings ~/git/common-settings
