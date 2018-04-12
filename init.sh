@@ -12,7 +12,9 @@ sudo apt install -y \
 	wget \
 	tasksel \
 	openssh-server \
-	vim
+	vim \
+	python-pip \
+	network-manager 
 
 
 #git clone https://github.com/keyakko/common-settings ~/git/common-settings
@@ -25,5 +27,5 @@ sudo apt install python-pip -y
 pip install --user git+git://github.com/powerline/powerline
 pip install psutil
 git clone https://github.com/powerline/fonts ~/git/powerline-fonts
-~/powerline-fonts/install.sh
+~/git/powerline-fonts/install.sh
 
