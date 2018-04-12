@@ -21,9 +21,9 @@ cp ~/git/common-settings/.* ~/
 
 chsh -s /bin/zsh
 
-
+sudo apt install python-pip -y
 pip install --user git+git://github.com/powerline/powerline
 pip install psutil
 git clone https://github.com/powerline/fonts ~/git/powerline-fonts
-~powerline-fonts/install.sh
+~/powerline-fonts/install.sh
 
