@@ -35,19 +35,18 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 # add color for comp list
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-# ssh auto
-#function _ssh {
-#  compadd `fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort`;
-#}
 setopt correct
+
+# essh completion
+#eval "$(essh --zsh-completion)"
+
+# kubectl completion
+#source <(kubectl completion zsh)
 
 ##################################################
 # PROMPT
 ##################################################
 PROMPT='%k%f%{[38;5;010m%}[%D{%H:%M:%S} %h] %n:%F{006}%~%f%# '
-#PROMPT='%k%f%{[30;48;5;198m%} Host: %m %{[0m%} %{[30;48;5;109m%} Hist: %h %{[0m%} %{[30;48;5;072m%} PWD: %~ %{[0m%} %{[30;48;5;227m%} Return: %(?.True.False) 
-#%{[0m%}%{[38;5;010m%}%n%f%# '
-#RPROMPT='%D{%H:%M:%S}'
 
 ##################################################
 # ALIAS
