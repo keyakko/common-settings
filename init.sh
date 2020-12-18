@@ -13,7 +13,7 @@ sudo apt install -y \
 	tasksel \
 	openssh-server \
 	vim \
-	python-pip \
+	python3-pip \
 	network-manager 
 
 
@@ -23,9 +23,8 @@ cp ~/git/common-settings/.* ~/
 
 chsh -s /bin/zsh
 
-sudo apt install python-pip -y
-pip install --user git+git://github.com/powerline/powerline
-pip install psutil
+sudo pip3 install git+git://github.com/powerline/powerline
+pip3 install psutil
 git clone https://github.com/powerline/fonts ~/git/powerline-fonts
 ~/git/powerline-fonts/install.sh
 
