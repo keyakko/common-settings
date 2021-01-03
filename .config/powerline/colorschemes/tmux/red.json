@@ -1,0 +1,19 @@
+{
+	"groups": {
+		"active_window_status": {"fg": "darkred",   "bg": "gray0",    "attrs": []},
+		"window_status":        {"fg": "gray70",     "bg": "darkred",    "attrs": []},
+		"activity_status":      {"fg": "yellow",     "bg": "gray0",    "attrs": []},
+		"bell_status":          {"fg": "red",        "bg": "gray0",    "attrs": []},
+		"window":               {"fg": "gray0",      "bg": "darkestred",    "attrs": []},
+		"window:divider":       {"fg": "gray0",      "bg": "darkestred",    "attrs": []},
+		"window:current":       {"fg": "white", "bg": "brightred", "attrs": ["bold"]},
+		"window_name":          {"fg": "white",      "bg": "brightred", "attrs": ["bold"]},
+		"session":              {"fg": "white",      "bg": "gray0",   "attrs": []},
+		"session:prefix":       {"fg": "brightred",     "bg": "gray0", "attrs": ["bold"]},
+		"hostname":             {"fg": "gray7",     "bg": "darkestred", "attrs": ["bold"]},
+		"system_load":          {"fg": "gray7",     "bg": "darkestred", "attrs": ["bold"]},
+		"background":           {"fg": "gray0",     "bg": "darkestred", "attrs": ["bold"]},
+		"attached_client":                 {"fg": "gray7",     "bg": "gray0", "attrs": []},
+		"date":                 {"fg": "gray7",     "bg": "gray0", "attrs": []}
+	}
+}

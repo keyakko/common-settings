@@ -1,0 +1,23 @@
+{
+	"segments": {
+		"left": [
+		],
+		"right": [
+			{
+				"function": "powerline.segments.common.time.date",
+				"args": {
+					"format": "%Y-%m-%d %H:%M:%S"
+				}
+			},
+			{
+				"function": "powerline.segments.common.net.internal_ip",
+				"args": {
+					"interface": "ens3"
+				}
+			},
+			{
+				"function": "powerline.segments.common.net.hostname"
+			}
+		]
+	}
+}
