@@ -16,15 +16,12 @@ sudo apt install -y \
 	python3-pip \
 	network-manager 
 
-
-#git clone https://github.com/keyakko/common-settings ~/git/common-settings
-cp ~/git/common-settings/.* ~/
-
-
 chsh -s /bin/zsh
 
 sudo pip3 install git+git://github.com/powerline/powerline
-pip3 install psutil
-git clone https://github.com/powerline/fonts ~/git/powerline-fonts
+#cp -r /usr/local/lib/python3.8/dist-packages/powerline/config_files ~/.config/powerline
+#pip3 install psutil
+git clone https://github.com/powerline/fonts ~/git/powerline-fonts --depth 1
 ~/git/powerline-fonts/install.sh
 
+cp ~/git/common-settings/.* ~/
