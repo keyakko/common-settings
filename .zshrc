@@ -100,6 +100,7 @@ fi
 # PLUGINS
 ##################################################
 source /usr/local/lib/zsh/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh
+source /usr/local/lib/zsh/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 

@@ -24,10 +24,17 @@ sudo pip3 install powerline-shell
 #cp -r /usr/local/lib/python3.8/dist-packages/powerline/config_files ~/.config/powerline
 #pip3 install psutil
 
+sudo mkdir -p /usr/local/lib/zsh
+
+git clone https://github.com/lukechilds/zsh-better-npm-completion /tmp/zsh-better-npm-completion --depth 1
+sudo mv /tmp/zsh-better-npm-completion /usr/local/lib/zsh/zsh-better-npm-completion
+
+git clone https://github.com/psprint/zsh-navigation-tools /tmp/zsh-navigation-tools --depth 1
+sudo mv /tmp/zsh-navigation-tools /usr/local/lib/zsh/zsh-navigation-tools
+
 git clone https://github.com/lukechilds/zsh-better-npm-completion /tmp/zsh-better-npm-completion --depth 1
 sudo mkdir -p /usr/local/lib/zsh
 sudo mv /tmp/zsh-better-npm-completion /usr/local/lib/zsh/zsh-better-npm-completion
-
 git clone https://github.com/powerline/fonts ~/git/powerline-fonts --depth 1
 ~/git/powerline-fonts/install.sh
 
