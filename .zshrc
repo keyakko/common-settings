@@ -4,10 +4,6 @@
 autoload -Uz add-zsh-hook
 autoload -U colors
 colors
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-
-
 
 ##################################################
 # AUTO_CD
@@ -96,7 +92,14 @@ function install_powerline_precmd() {
   precmd_functions+=(powerline_precmd)
 }
 
-#if [ "$TERM" != "linux" ]; then
-#  install_powerline_precmd
-#fi
+if [ "$TERM" != "linux" ]; then
+  install_powerline_precmd
+fi
+
+##################################################
+# PLUGINS
+##################################################
+source /usr/local/lib/zsh/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
