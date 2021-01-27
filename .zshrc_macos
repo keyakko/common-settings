@@ -1,0 +1,109 @@
+##################################################
+# 色設定
+##################################################
+autoload -Uz add-zsh-hook
+autoload -U colors
+colors
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+
+##################################################
+# AUTO_CD
+##################################################
+setopt auto_cd
+
+
+##################################################
+# 補完
+##################################################
+# set completion config path
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# enable
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' format '%B%F{blue}%d%f%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' ignore-parents parent pwd ..
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+setopt correct
+# zsh-navigation-tools
+source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+
+
+##################################################
+# プロンプト
+##################################################
+PROMPT='%k%f%{[38;5;010m%}[%D{%H:%M:%S} %h] %n:%F{006}%~%f%# '
+
+
+##################################################
+# ALIAS
+##################################################
+alias ls='ls -G'
+alias ll='ls -laG'
+alias l='ls -G'
+
+
+##################################################
+# 履歴
+##################################################
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt share_history
+setopt hist_reduce_blanks
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+
+
+##################################################
+# DIRECTORY STACK
+##################################################
+setopt auto_pushd
+setopt pushd_ignore_dups
+
+
+##################################################
+# LETTER DELETE
+##################################################
+WORDCHARS=':?_-.[]~=&;!#$%^(){}<>'
+
+
+##################################################
+# ENV
+##################################################
+export LANG=en_US.UTF-8
+export LC_ALL=$LANG
+
+
+##################################################
+# POWERLINE
+##################################################
+function powerline_precmd() {
+  #PS1="$(powerline-shell --shell zsh $?)"
+  PS1="$(powerline-go --shell zsh --error $?)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+  install_powerline_precmd
+fi
+
+
+source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
+source "/usr/local/opt/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh"
